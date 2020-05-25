@@ -1,0 +1,41 @@
+<div class="modal fade modal-large" id="updateTaskModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Update Task Details</h4>
+          <button type="button" class="close" (click)="hideModal()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <table class="table table-hover">
+            <tr class="table-header">
+                <td>Title</td>
+                <td>Description</td>
+                <td>Priority Level</td>
+                <td>State</td>
+                <td>Estimate (Days)</td>
+            </tr>
+            <tr>
+              <td>{{selectedTask?.title}}</td>
+              <td>{{selectedTask?.description}}</td>
+              <td>{{selectedTask?.priorityLevel}}</td>
+              <td>{{selectedTask?.state}}</td>
+              <td>{{selectedTask?.estimate}}</td>
+          </tr>
+        </table>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" (click)="sendModal()" >Save</button>
+          <button type="button" class="btn btn-light" (click)="hideModal()">Cancel</button>
+  
+          <!-- this button is hidden, used to close from typescript -->
+          <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

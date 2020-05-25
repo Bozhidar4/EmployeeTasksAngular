@@ -1,0 +1,27 @@
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Employee To-Do List Tasks</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>Employees</h3>
+            <table class="table table-hover">
+                <tr *ngFor="let employee of employeeService.employeeList" (click)="selectEmployee(employee)" [class.highlighted]="employee.firstName === currentEmployeeFirstName">
+                    <td class="button" (click)="getTasks(employee)">{{employee.firstName}} {{employee.lastName}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-7">
+            <app-task-list></app-task-list>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-5">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateEmployeeModal" (click)="showUpdateEmployeeModal()">Update Employee</button>
+            <app-update-employee-modal></app-update-employee-modal>
+        </div>
+        <div class="col-md-7">
+            <app-task-details></app-task-details>
+        </div>
+    </div>
+</div>

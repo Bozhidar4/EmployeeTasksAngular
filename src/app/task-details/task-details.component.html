@@ -1,0 +1,20 @@
+<h3>Task Details</h3>
+<table id="task-detail" class="table table-hover">
+    <tr class="table-header">
+        <td>Title</td>
+        <td>Description</td>
+        <td>Priority Level</td>
+        <td>State</td>
+        <td>Estimate (Days)</td>
+    </tr>
+    <tr>
+        <td>{{taskService.taskDetails?.title}}</td>
+        <td>{{taskService.taskDetails?.description}}</td>
+        <td>{{taskService.taskDetails?.priorityLevel}}</td>
+        <td>{{taskService.taskDetails?.state}}</td>
+        <td>{{taskService.taskDetails?.estimate}}</td>
+    </tr>
+</table>
+<br>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#updateTaskModal" (click)="showUpdateTaskModal()">Update Task</button>
+<app-update-task-modal></app-update-task-modal>
